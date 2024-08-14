@@ -1,0 +1,125 @@
+@use '../variables.scss' as *;
+@use '../mixin.scss' as mixins;
+
+.container {
+  margin: auto;
+  max-width: 535px;
+  width: 100%;
+  @include mixins.respond-to('medium') {
+    max-width: 800px;
+  }
+
+  @include mixins.respond-to('large') {
+    max-width: 1200px;
+  }
+}
+
+.align-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.dashboard-header {
+  background-color: $white;
+  & nav {
+    margin: 0px 20px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+    & div {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    & button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      border: transparent;
+      background-color: transparent;
+      padding: 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+.dashboard-main {
+  margin: 0px 20px;
+}
+
+.task-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 52px;
+  @include mixins.respond-to('medium') {
+    max-width: 800px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+  }
+
+  @include mixins.respond-to('large') {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+.align-container-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 390px;
+  width: 100%;
+  @include mixins.respond-to('medium') {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  @include mixins.respond-to('large') {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+.align-card {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  @include mixins.respond-to('medium') {
+    max-width: 800px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.title-div {
+  font-size: $text-size;
+  font-weight: $font-regular;
+  color: $text-color;
+  margin-left: 23px;
+  align-self: flex-start;
+}
+
+.div-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-width: 390px;
+  gap: 52px;
+}

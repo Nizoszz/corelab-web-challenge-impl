@@ -1,0 +1,36 @@
+@use '../variables.scss' as *;
+
+.searchbar{
+    max-width: 314px;
+    height: 28px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid $form-gray;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & input {
+        border: none;
+        outline: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: $form-gray;
+        width: 100%;
+      }
+        
+      & button {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        border: transparent;
+        & img {
+          align-self: center;
+          width: 13px;
+          height: 13px;
+          cursor: pointer;
+        }
+      }
+
+}
