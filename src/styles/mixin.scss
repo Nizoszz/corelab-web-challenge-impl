@@ -1,0 +1,35 @@
+@use './variables.scss' as *;
+
+@mixin card-styles($bg-color) {
+  background-color: $bg-color;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  max-width: 390px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin color-button($color-name) {
+  @if map-has-key($color-map, $color-name) {
+    background-color: map-get($color-map, $color-name);
+  } @else {
+    background-color: $white; // Fallback se a cor não estiver no mapa
+  }
+}
+
+$breakpoints: (
+  'small': 600px,
+  'medium': 1024px,
+  'large': 1200px,
+);
+
+@mixin respond-to($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
